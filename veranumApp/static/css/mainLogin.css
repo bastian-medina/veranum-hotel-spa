@@ -1,0 +1,385 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url(img/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 300px;
+}
+
+.contenedorTodo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.cajaTrasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 166, 0, 0.5);
+}
+
+.cajaTrasera div{
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+.cajaTrasera div p {
+    margin-top: 30px;
+}
+.cajaTrasera div button {
+    margin-top: 30px;
+}
+
+.cajaTrasera div h3{
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.cajaTrasera button{
+    padding: 10px 40px;
+    margin-top: 30px;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.cajaTrasera button:hover{
+    background: #fff;
+    color: rgba(255, 166, 0, 1);
+}
+
+/*formularios*/
+.contenedorLoginRegister {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    max-height: 600px;
+    position: relative;
+    top: -198px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175,0.885,0.320,1.27);
+}
+
+.contenedorLoginRegister form{
+    width: 100%;
+    padding: 80px 20px;
+    background: #fff;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedorLoginRegister form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(255, 166, 0, 1);
+    font-family: 'Montserrat', sans-serif;
+}
+#mail1{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+#pass1{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+
+#nom{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+#ap{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+#rut{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+#ciudad{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+
+#direccion{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+
+#mail{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+
+#telefono{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+.contenedorLoginRegister form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: rgba(255, 166, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.contenedorLoginRegister button:hover{
+    background: rgba(255, 166, 0, 1);
+    transition: 0.5s;
+}
+
+.formularioLogin{
+    opacity: 1;
+    display: block;  
+}
+
+/*Radio butons sexo*/
+.cntr {
+    margin: auto;
+    margin-top: 20px;
+    color: rgb(105, 105, 105);
+}
+  
+.btn-radio{
+    cursor: pointer;
+    display: inline-block;
+    
+    -webkit-user-select: none;
+    user-select: none;
+    margin-left: 10px;
+}
+
+.btn-radio:not(:first-child) {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 480px){
+    .btn-radio {
+      display: block;
+      float: none;
+    }
+    .btn-radio:not(:first-child) {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+}
+
+.btn-radio svg {
+    fill: none;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.btn-radio svg circle {
+    stroke-width: 2;
+    stroke: #C8CCD4;
+}
+
+.btn-radio svg path {
+    stroke: rgba(255, 166, 0, 1);
+}
+
+.btn-radio svg path.inner {
+    stroke-width: 6;
+    stroke-dasharray: 19;
+    stroke-dashoffset: 19;
+}
+
+.btn-radio svg path.outer {
+    stroke-width: 2;
+    stroke-dasharray: 57;
+    stroke-dashoffset: 57;
+}
+
+.btn-radio input {
+    display: none;
+}
+
+.btn-radio input:checked + svg path {
+    transition: all 0.4s ease;
+}
+
+.btn-radio input:checked + svg path.inner {
+    stroke-dashoffset: 38;
+    transition-delay: 0.3s;
+}
+
+.btn-radio input:checked + svg path.outer {
+    stroke-dashoffset: 0;
+}
+
+.btn-radio span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.formularioRegister{
+    display: none;
+}
+
+/*Lista de Pises*/
+.paises{
+    margin-top: 20px;
+    margin-left: 23px;
+    outline: none;
+    background-color: #fff;
+    border-color: #C8CCD4;
+    width: 60%;
+    height: 130%;
+    border-radius: 10px;
+}
+
+.listPa label{
+    margin-left: 11px;
+    color: rgb(105, 105, 105);
+}
+
+.Sexo{
+    margin-top: 20px;
+    margin-left: 19px;
+    outline: none;
+    background-color: #fff;
+    border-color: #C8CCD4;
+    width: 60%;
+    height: 130%;
+    border-radius: 10px;
+}
+
+.listSex label{
+    color: rgb(105, 105, 105);
+}
+
+
+
+/*responsive*/
+
+@media screen and (max-width: 850px){
+    main{
+        margin-top: 50px;
+    }
+    .cajaTrasera{
+        max-width: 350px;
+        height: 380px;
+        flex-direction: column;
+        margin: auto;
+        
+    }
+
+    .cajaTrasera div{
+        top: 50px;
+        margin: 0px;
+        position: absolute;
+    }
+    /*formulario*/
+    .contenedorLoginRegister{
+        top: 0px;
+        left: 0px;
+        margin: auto;
+    }
+    .contenedorLoginRegister form{
+        position: relative;
+    }
+}
+
+
+body::-webkit-scrollbar {
+	width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: hsl(39, 100%, 50%);
+	border-radius: 5px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBarA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/navbarA.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function(){
+   $("#hide").click(function(){
+      $("#news").each(function() {
+        displaying = $(this).css("display");
+        if(displaying == "none") {
+          $(this).fadeIn('slow',function() {
+           $(this).css("display","block");
+          });
+        } else {
+          $(this).fadeOut('slow',function() {
+            $(this).css("display","none");
+          });
+        }
+      });
+    });
+  });
+</script>
+</head>
+<body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+           <div class="container-fluid">
+             <a class="navbar-brand" href="#"><img src="{% static 'css/img/logo.png' %}" alt="" style="width: 80px; height: 65px">Veranum</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" id="hide">
+               <span class="navbar-toggler-icon" id="hide"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+               <div class="navbar-nav ms-auto">
+                 <a class="nav-link active" aria-current="page" href="Index.html">Inicio</a>
+                 <a class="nav-link" href="#">Hoteles</a>
+                 <a class="nav-link" aria-current="page" href="Habitaciones.html">Habitaciónes</a>
+                 <a class="nav-link" href="#">Restaurant</a>
+                 <a class="nav-link" href="Login.html">Iniciar Sesión</a>
+               </div>
+             </div>
+           </div>
+         </nav>
+        </div>
+                <div class="news" id="news">
+                    <h1 id="news">Este verano llegan nuevas ofertas</h1>
+                    <h2 id="news">¡Hasta un 50% de descuento!</h2>
+                </div>
+                <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                  style="height: 100%; width: 100%;">
+                  <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #fff;"></path>
+              </svg></div>
+      </header>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/Inicio.css' %}">
+   <link rel="stylesheet" href="{% static 'css/navbarA.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Veranum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script>
+            $(document).ready(function(){
+      $("#hide").click(function(){
+          $("#news").each(function() {
+            displaying = $(this).css("display");
+            if(displaying == "none") {
+              $(this).fadeIn('slow',function() {
+              $(this).css("display","block");
+              });
+            } else {
+              $(this).fadeOut('slow',function() {
+                $(this).css("display","none");
+              });
+            }
+          });
+        });
+      });
+    </script>
+</head>
+<body>
+
+   <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+           <div class="container-fluid">
+             <a class="navbar-brand" href="http://127.0.0.1:8000/Index/"><img src="{% static 'css/img/logo.png' %}" alt="" style="width: 80px; height: 65px">Veranum</a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" id="hide">
+               <span class="navbar-toggler-icon" id="hide"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                 <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/Index/">Inicio</a>
+                 <a class="nav-link" href="#">Hoteles</a>
+                 <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/habitaciones/">Habitaciones</a>
+                 <a class="nav-link" href="#">Restaurant</a>
+                 {% if user.is_superuser %}
+                     <a class="nav-link" href="http://127.0.0.1:8000/tabla/">Listar</a>
+                  {% endif %}
+                  <li class="nav-item dropdown">
+                    {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cuenta
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#" style="color: black !important;">Iformación de Cuenta</a></li>
+                      <li><a href="/cerrar_sesion/" class="dropdown-item submit" href="#" style="color: black !important;">Cerrar Cesión</a></li>
+                    </ul>
+                    {% else %}
+                    <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/login/">Iniciar sesión</a>
+                    {% endif %}
+
+                  </li>
+               </div>
+             </div>
+           </div>
+        </nav>
+      </div>
+
+                <div class="news" id="news">
+                    <h1 id="news">Este verano llegan nuevas ofertas</h1>
+                    <h2 id="news">¡Hasta un 50% de descuento!</h2>
+                </div>
+                <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                  style="height: 100%; width: 100%;">
+                  <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                      style="stroke: none; fill: #fff;"></path>
+              </svg></div>
+    </header>
+   
+
+    <div class="container">
+      <h3 class="ofertas">Ofertas validas hasta el 24 de octubre</h3>
+      <div class="slidier1" >
+        <div class="slider owl-carousel">
+          <div class="card">
+             <div class="img">
+                <img src="{% static 'css/img/h1.png' %}" alt="">
+             </div>
+             <div class="content">
+                <div class="title">
+                   Habitación Veranum
+                </div>
+                <div class="sub-title">
+                   $150.000
+                </div>
+                <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                </p>
+                <div class="btn">
+                   <button href="http://127.0.0.1:8000/habitaciones/" class="botin">Más Información</button>
+                </div>
+             </div>
+          </div>
+          <div class="card">
+             <div class="img">
+                <img src="{% static 'css/img/h2.jpg' %}" alt="">
+             </div>
+             <div class="content">
+                <div class="title">
+                   Habitación Solairs
+                </div>
+                <div class="sub-title">
+                   $100.000
+                </div>
+                <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                </p>
+                <div class="btn">
+                   <button href="http://127.0.0.1:8000/habitaciones/" class="botin">Más Información</button>
+                </div>
+             </div>
+          </div>
+          <div class="card">
+             <div class="img">
+                <img src="{% static 'css/img/h3.jpg' %}" alt="">
+             </div>
+             <div class="content">
+                <div class="title">
+                   Habitación Proletarium
+                </div>
+                <div class="sub-title">
+                   $50.000
+                </div>
+                <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+                </p>
+                <div class="btn">
+                   <button href="http://127.0.0.1:8000/habitaciones/" class="botin">Más Información</button>
+                </div>
+             </div>
+          </div>
+          <div class="card">
+            <div class="img">
+               <img src="{% static 'css/img/h4.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="title">
+                  Habitación Meganium
+               </div>
+               <div class="sub-title">
+                  $300.000
+               </div>
+               <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+               </p>
+               <div class="btn">
+                  <button href="http://127.0.0.1:8000/habitaciones/" class="botin">Más Información</button>
+               </div>
+            </div>
+         </div>
+         <div class="card">
+          <div class="img">
+             <img src="{% static 'css/img/h5.jpg' %}" alt="">
+          </div>
+          <div class="content">
+             <div class="title">
+                Habitación Genialum
+             </div>
+             <div class="sub-title">
+                $120.000
+             </div>
+             <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+             </p>
+             <div class="btn">
+                <button href="http://127.0.0.1:8000/habitaciones/" class="botin">Más Información</button>
+             </div>
+          </div>
+         </div>
+       </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="cartas1">
+         <div class="row">
+         <div class="col-xs-12 col-sm-6">
+            <div class="card" style="width: 18rem;">
+               <img src="{% static 'css/img/h1.png' %}" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Habitación Veranum</h5>
+                 <h6 class="card-subtitle mb-2">$150.000</h6>
+                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo non, rem alias vel itaque rerum ut beatae porro, molestiae unde provident harum similique illo quis nesciunt at debitis, dolorum error?</p>
+                 <a href="http://127.0.0.1:8000/habitaciones/" class="btn btn-primary" id="but">Más Información</a>
+               </div>
+             </div>
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <div class="card" style="width: 18rem;">
+               <img src="{% static 'css/img/h2.1.jpg' %}" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Habitación Solaris</h5>
+                 <h6 class="card-subtitle mb-2">$100.000</h6>
+                 <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus distinctio reiciendis cum facere vitae dicta laudantium corporis omnis adipisci non placeat, fuga nemo eos perspiciatis voluptas maxime, quos ab eius!</p>
+                 <a href="http://127.0.0.1:8000/habitaciones/" class="btn btn-primary" id="but">Más Información</a>
+               </div>
+             </div>
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <div class="card" style="width: 18rem;">
+               <img src="{% static 'css/img/h3.1.jpg' %}" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Habitación Proletarium</h5>
+                 <h6 class="card-subtitle mb-2">$50.000</h6>
+                 <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati assumenda nam fugit doloremque quasi, magni eos libero velit nemo rem ea, aut beatae doloribus nesciunt et accusantium voluptatibus, aliquid ab.</p>
+                 <a href="http://127.0.0.1:8000/habitaciones/" class="btn btn-primary" id="but">Más Información</a>
+               </div>
+             </div>
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <div class="card" style="width: 18rem;">
+               <img src="{% static 'css/img/h4.1.jpg' %}" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Habitación Meganium</h5>
+                 <h6 class="card-subtitle mb-2">$300.000</h6>
+                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem accusamus atque debitis reiciendis impedit? Repellendus, deserunt id nihil aspernatur molestiae hic nostrum esse, quod similique ratione rem ab officia illo?</p>
+                 <a href="http://127.0.0.1:8000/habitaciones/" class="btn btn-primary" id="but">Más Información</a>
+               </div>
+             </div>
+         </div>
+         <div class="col-xs-12 col-sm-6" style="margin-bottom: 100px;">
+            <div class="card" style="width: 18rem;">
+               <img src="{% static 'css/img/h5.1.jpg' %}" class="card-img-top" alt="...">
+               <div class="card-body">
+                 <h5 class="card-title">Habitación Genialum</h5>
+                 <h6 class="card-subtitle mb-2">$120.000</h6>
+                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet saepe laborum incidunt quo aliquam aspernatur ullam voluptate sed repellat adipisci deleniti voluptates nulla quis, tempore, quae nobis, sint dolore esse.</p>
+                 <a href="http://127.0.0.1:8000/habitaciones/" class="btn btn-primary" id="but">Más Información</a>
+               </div>
+             </div>
+         </div>
+      </div>
+      </div>
+   </div>
+   
+  
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   {% if messages %}
+   {%  for m in messages %}
+       <script>
+           Swal.fire({
+               "title":"Felicitaciones",
+               "text":"{{m}}",
+               "icon":"success"
+           })
+       </script>
+   {%  endfor %}
+   {% endif %}
+  <script>
+      $(".slider").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2000, //2000ms = 2s;
+        autoplayHoverPause: true,
+      });
+   </script>
+   {% include 'footer.html' %}
+</body>
+</html>

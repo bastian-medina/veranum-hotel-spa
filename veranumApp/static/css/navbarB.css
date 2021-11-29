@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+nav{
+    align-content: flex-end;
+    background-color:none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+header{
+    background-color: rgba(224, 146, 0, 0.904);
+}
+.navbar-brand{
+    size: 50%;
+     font-size: 150%;
+    font-family: 'Cinzel', serif;
+}
+
+.nav a{
+    color: white !important;
+}
+header a{
+    color: white !important;
+}
+nav a:hover{
+    color: hsla(0, 0%, 100%, 0.719) !important;
+    transition: 500ms;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+
